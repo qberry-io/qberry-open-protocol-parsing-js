@@ -1,0 +1,25 @@
+{
+  "name": "qberry-open-protocol-parsing",
+  "version": "1.0.0",
+  "description": "The official parsing library for \"Qberry Open Protocol\".",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denizkanmaz/qberry-open-protocol-parsing-js.git"
+  },
+  "author": "Deniz KANMAZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denizkanmaz/qberry-open-protocol-parsing-js/issues"
+  },
+  "homepage": "https://github.com/denizkanmaz/qberry-open-protocol-parsing-js#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-import-rename": "^1.0.1",
+    "babel-preset-env": "^1.7.0"
+  }
+}
