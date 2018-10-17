@@ -12,20 +12,17 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-export class BattKeyDefinition
+export class HolaKeyDefinition
 {
-    
-}
+    static get SECRET_KEY(){
+        return 14;
+    }
 
-const createConst = (constName, value) => {
-    Object.defineProperty(BattKeyDefinition, constName, {
-        value: value,
-        writable: false,
-        enumerable: true,
-        configurable: false
-    })
-}
+    static get DEVICE_MODEL(){
+        return 15;
+    }
 
-createConst('CHARGE_STATUS', 111);
-createConst('BATTERY_LEVEL', 112);
-createConst('BATTERY_VOLTAGE', 113);
+    static get PROTOCOL_VERSION(){
+        return 16;
+    }
+}
