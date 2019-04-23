@@ -19,11 +19,19 @@ export class Message {
     }
 
     get deviceIdentity() {
-        return getObject(HeaderKeyDefinition.DEVICE_IDENTITY);
+        return this.getString(HeaderKeyDefinition.DEVICE_IDENTITY);
     }
 
-    get getObject(key) {
-        const filtered = this.keyvals.filter((itemKeyval) => {
+    get connectionId() {
+        return this.getString(HeaderKeyDefinition.CONNECTION_ID);
+    }
+
+    getString(key) {
+        return String(this.getObject(key).val);
+    }
+
+    getObject(key) {
+        const filtered = this._keyvals.filter(itemKeyval => {
             return itemKeyval.key == key;
         });
 

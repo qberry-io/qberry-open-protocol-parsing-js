@@ -4,8 +4,8 @@
   "description": "The official parsing library for \"Qberry Open Protocol\".",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d build"
+    "test": "npm run-script build && ./node_modules/.bin/jest ./test",
+    "build": "./node_modules/.bin/babel src -d dist --source-maps"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/denizkanmaz/qberry-open-protocol-parsing-js#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-import-rename": "^1.0.1",
-    "babel-preset-env": "^1.7.0"
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/preset-env": "^7.4.3",
+    "jest": "^24.7.1"
   }
 }

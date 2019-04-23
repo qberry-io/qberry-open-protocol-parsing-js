@@ -12,17 +12,19 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-export class HeaderKeyDefinition
+class HolaKeyDefinition
 {
-    static get MESSAGE_TYPE(){
-        return 11;
+    static get SECRET_KEY(){
+        return 14;
     }
 
-    static get DEVICE_IDENTITY(){
-        return 12;
+    static get DEVICE_MODEL(){
+        return 15;
     }
 
-    static get CONNECTION_ID(){
-        return 13;
+    static get PROTOCOL_VERSION(){
+        return 16;
     }
 }
+
+export {HolaKeyDefinition};

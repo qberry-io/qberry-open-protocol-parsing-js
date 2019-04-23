@@ -1,6 +1,7 @@
 {
-    "presets": ["env"],
+    "presets": ["@babel/preset-env"],
     "plugins": [
-        ["import-rename", {"^(.*)\\.es6$": "$1.js"}]
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-export-default-from"
       ]
 }
