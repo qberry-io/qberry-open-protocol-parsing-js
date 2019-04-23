@@ -1,4 +1,4 @@
-//  Copyright (c) 2018-present, Deniz Kanmaz. All rights reserved.
+//  Copyright (c) 2019-present, Deniz Kanmaz. All rights reserved.
 //  This source code is licensed under the GNU GENERAL PUBLIC
 //  LICENCE V3. Use of this source code is governed by a license
 //  that can be found in the LICENSE file.
@@ -12,17 +12,15 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-export class HolaKeyDefinition
+class TEHUKeyDefinition
 {
-    static get SECRET_KEY(){
-        return 14;
+    static get TEMPERATURE(){
+        return 311;
     }
 
-    static get DEVICE_MODEL(){
-        return 15;
-    }
-
-    static get PROTOCOL_VERSION(){
-        return 16;
+    static get HUMIDITY(){
+        return 312;
     }
 }
+
+export {TEHUKeyDefinition};

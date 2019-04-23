@@ -1,4 +1,4 @@
-export class Symbol{
+class Symbol{
     
     static get SPLITTER(){
         return '|';
@@ -12,3 +12,5 @@ export class Symbol{
         return '$';
     }
 }
+
+export {Symbol};

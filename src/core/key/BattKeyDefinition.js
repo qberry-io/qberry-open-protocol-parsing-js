@@ -12,41 +12,32 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-export class GNSSKeyDefinition
+class BattKeyDefinition
 {
-    static get FIX_STATUS(){
-        return 211;
+    static get CHARGE_STATUS(){
+        return 111;
     }
 
-    static get LATITUDE(){
-        return 212;
+    static get BATTERY_LEVEL(){
+        return 112;
     }
 
-    static get LONGTITUDE(){
-        return 213;
-    }
-
-    static get MSL_ALTITUDE(){
-        return 214;
-    }
-
-    static get SPEED_OVER_GROUND(){
-        return 215;
-    }
-
-    static get COURSE_OVER_GROUND(){
-        return 216;
-    }
-
-    static get FIX_MODE(){
-        return 217;
-    }
-
-    static get GNSS_USED(){
-        return 218;
-    }
-
-    static get GLONASS_USED(){
-        return 219;
+    static get BATTERY_VOLTAGE(){
+        return 113;
     }
 }
+
+export {BattKeyDefinition};
+
+// const createConst = (constName, value) => {
+//     Object.defineProperty(BattKeyDefinition, constName, {
+//         value: value,
+//         writable: false,
+//         enumerable: true,
+//         configurable: false
+//     })
+// }
+
+// createConst('CHARGE_STATUS', 111);
+// createConst('BATTERY_LEVEL', 112);
+// createConst('BATTERY_VOLTAGE', 113);

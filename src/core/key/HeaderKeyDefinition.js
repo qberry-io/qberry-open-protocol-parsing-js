@@ -12,30 +12,19 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-export class BattKeyDefinition
+class HeaderKeyDefinition
 {
-    static get CHARGE_STATUS(){
-        return 111;
+    static get MESSAGE_TYPE(){
+        return 11;
     }
 
-    static get BATTERY_LEVEL(){
-        return 112;
+    static get DEVICE_IDENTITY(){
+        return 12;
     }
 
-    static get BATTERY_VOLTAGE(){
-        return 113;
+    static get CONNECTION_ID(){
+        return 13;
     }
 }
 
-// const createConst = (constName, value) => {
-//     Object.defineProperty(BattKeyDefinition, constName, {
-//         value: value,
-//         writable: false,
-//         enumerable: true,
-//         configurable: false
-//     })
-// }
-
-// createConst('CHARGE_STATUS', 111);
-// createConst('BATTERY_LEVEL', 112);
-// createConst('BATTERY_VOLTAGE', 113);
+export {HeaderKeyDefinition};
