@@ -1,6 +1,9 @@
 const { parse } = require('../../dist/parsing');
 const { MessageTypes } = require('../../dist/parsing/messaging');
-const { HOLAMessage, BATTMessage, GNSSMessage } = require('../../dist/parsing/messaging');
+const { HOLAMessage,
+	BATTMessage,
+	GNSSMessage,
+	TEHUMessage } = require('../../dist/parsing/messaging');
 
 describe('message-parser', () => {
 	test('should parse HOLA messages correctly.', () => {
@@ -34,7 +37,7 @@ describe('message-parser', () => {
 	});
 
 	test('should parse GNSS messages correctly.', () => {
-		const rawMessage = "$|11|GNSS|12|90111122223333444|13|WMXQFV|211|1|212|41.042820|213|28.689460|214|108.600|215|0.43|216|344.6|217|1|218|11|219|0|$";
+		const rawMessage = '$|11|GNSS|12|90111122223333444|13|WMXQFV|211|1|212|41.042820|213|28.689460|214|108.600|215|0.43|216|344.6|217|1|218|11|219|0|$';
 
 		const pr = parse(rawMessage);
 		expect(pr.messageType).toBe(MessageTypes.GNSS);
@@ -54,4 +57,17 @@ describe('message-parser', () => {
 		expect(m.glonassSatellitesUsed).toBe(0);
 	});
 
+	test('should parse TEHU messages correctly.', () => {
+		const rawMessage = '$|11|TEHU|12|90111122223333444|13|WMXQFV|17|123456789|311|22.20|312|43.80|$';
+
+		const pr = parse(rawMessage);
+		expect(pr.messageType).toBe(MessageTypes.TEHU);
+
+		const m = new TEHUMessage(pr);
+		expect(m.messageType).toBe(MessageTypes.TEHU);
+		expect(m.deviceIdentity).toBe('90111122223333444');
+		expect(m.connectionId).toBe('WMXQFV');
+		expect(m.temperature).toBe(22.20);
+		expect(m.humidity).toBe(43.80);
+	});
 });
