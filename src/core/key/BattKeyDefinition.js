@@ -1,4 +1,4 @@
-//  Copyright (c) 2018-present, Deniz Kanmaz. All rights reserved.
+//  Copyright (c) 2019-present, Deniz Kanmaz. All rights reserved.
 //  This source code is licensed under the GNU GENERAL PUBLIC
 //  LICENCE V3. Use of this source code is governed by a license
 //  that can be found in the LICENSE file.
@@ -12,32 +12,34 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-class BattKeyDefinition
-{
-    static get CHARGE_STATUS(){
+/**
+ * Class containing BATT KEY constants.
+ */
+class BattKeyDefinition {
+
+    /**
+     * Gets Charge Status key.
+     * @returns {number} Charge Status key.
+     */
+    static get CHARGE_STATUS() {
         return 111;
     }
 
-    static get BATTERY_LEVEL(){
+    /**
+     * Gets Battery Level key.
+     * @returns {number} Battery Level key.
+     */
+    static get BATTERY_LEVEL() {
         return 112;
     }
 
-    static get BATTERY_VOLTAGE(){
+    /**
+     * Gets Battery Voltage key.
+     * @returns {number} Battery Voltage key.
+     */
+    static get BATTERY_VOLTAGE() {
         return 113;
     }
 }
 
-export {BattKeyDefinition};
-
-// const createConst = (constName, value) => {
-//     Object.defineProperty(BattKeyDefinition, constName, {
-//         value: value,
-//         writable: false,
-//         enumerable: true,
-//         configurable: false
-//     })
-// }
-
-// createConst('CHARGE_STATUS', 111);
-// createConst('BATTERY_LEVEL', 112);
-// createConst('BATTERY_VOLTAGE', 113);
+export { BattKeyDefinition };

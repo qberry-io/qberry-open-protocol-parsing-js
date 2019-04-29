@@ -27,7 +27,7 @@ const parse = (rawMessage) => {
 	}
 
 	// Find out the type of the message.
-	var messageType = keyvals.filter(kv => kv.key === HeaderKeyDefinition.MESSAGE_TYPE)[0].val
+	const messageType = keyvals.filter(kv => kv.key === HeaderKeyDefinition.MESSAGE_TYPE)[0].val
 
 	return new MessageParseResult(rawMessage, keyvals, messageType);
 }

@@ -1,4 +1,4 @@
-//  Copyright (c) 2018-present, Deniz Kanmaz. All rights reserved.
+//  Copyright (c) 2019-present, Deniz Kanmaz. All rights reserved.
 //  This source code is licensed under the GNU GENERAL PUBLIC
 //  LICENCE V3. Use of this source code is governed by a license
 //  that can be found in the LICENSE file.
@@ -12,19 +12,34 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-class HeaderKeyDefinition
-{
-    static get MESSAGE_TYPE(){
+/**
+ * Class containing Header KEY constants.
+ */
+class HeaderKeyDefinition {
+
+    /**
+     * Gets Message Type key.
+     * @returns {number} Message Type key.
+     */
+    static get MESSAGE_TYPE() {
         return 11;
     }
 
-    static get DEVICE_IDENTITY(){
+    /**
+     * Gets Device Identity key.
+     * @returns {number} Device Identity key.
+     */
+    static get DEVICE_IDENTITY() {
         return 12;
     }
 
-    static get CONNECTION_ID(){
+    /**
+     * Gets Connection Id key.
+     * @returns {number} Connection Id key.
+     */
+    static get CONNECTION_ID() {
         return 13;
     }
 }
 
-export {HeaderKeyDefinition};
+export { HeaderKeyDefinition };

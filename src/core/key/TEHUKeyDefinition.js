@@ -12,15 +12,26 @@
 //  this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-class TEHUKeyDefinition
-{
-    static get TEMPERATURE(){
+/**
+ * Class containing TEHU KEY constants.
+ */
+class TEHUKeyDefinition {
+
+    /**
+     * Gets Temperature key.
+     * @returns {number} Temperature key.
+     */
+    static get TEMPERATURE() {
         return 311;
     }
 
-    static get HUMIDITY(){
+    /**
+     * Gets Humidity key.
+     * @returns {number} Humidity key.
+     */
+    static get HUMIDITY() {
         return 312;
     }
 }
 
-export {TEHUKeyDefinition};
+export { TEHUKeyDefinition };
