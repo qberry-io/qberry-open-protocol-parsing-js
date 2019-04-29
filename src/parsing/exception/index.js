@@ -1,1 +1,1 @@
-export {InvalidMessageError} from './InvalidMessageError';
+export { InvalidMessageError } from './InvalidMessageError';
