@@ -14,23 +14,23 @@ Also see: [dotnet version](https://github.com/denizkanmaz/qberry-open-protocol-p
 Demonstration of parsing a "HOLA" message.
 ```javascript
     // Import the necessary stuffs..
-    const { parse, createMessage } = require('qberry-open-protocol-parsing-js');
-    
-    // The raw message from the device..
-    const rawMessage = '$|11|HOLA|12|90111122223333444|13|WMXQFV|14|B23a56|15|ONE|16|1.0.0|$';
-    
-    // Parse the raw message using message-parser utility.
-    var pr = parse(rawMessage);
-    
-    // Write the message type to the console.
-    console.log('The type of the message is ' + pr.messageType'.');
-    
-    // It is possible to create the object form of the message with message specific properties.
-    var m = createMessage(pr);
-    
-    // Write some values to the console.
-    console.log('The device id is ' + m.deviceIdentity'.');
-    console.log('The protocol version of the device id is ' + m.protocolVersion'.');
+	const { parse, createMessage } = require('qberry-open-protocol-parsing-js');
+
+	// The raw message from the device..
+	const rawMessage = '$|11|HOLA|12|90111122223333444|13|WMXQFV|14|B23a56|15|ONE|16|1.0.0|$';
+
+	// Parse the raw message using message-parser utility.
+	var pr = parse(rawMessage);
+
+	// Write the message type to the console.
+	console.log('The type of the message is ' + pr.messageType + '.');
+
+	// It is possible to create the object form of the message with message specific properties.
+	var m = createMessage(pr);
+
+	// Write some values to the console.
+	console.log('The device id is ' + m.deviceIdentity + '.');
+	console.log('The protocol version of the device id is ' + m.protocolVersion + '.');
 ```
   
 ### Example 2:
@@ -46,15 +46,15 @@ Demonstration of parsing a "GNSS" message.
     var pr = parse(rawMessage);
     
     // Write the message type to the console.
-    console.log('The type of the message is ' + pr.messageType'.');
+    console.log('The type of the message is ' + pr.messageType + '.');
     
     // It is possible to create the object form of the message with message specific properties.
     var m = createMessage(pr);
     
     // Write some value to the console.
-    console.log('The device id is ' + m.deviceIdentity'.');
-    console.log('The Latitude is ' + m.latitude'.');
-    console.log('The Longtitude is ' + m.longtitude'.');
+    console.log('The device id is ' + m.deviceIdentity + '.');
+    console.log('The Latitude is ' + m.latitude + '.');
+    console.log('The Longtitude is ' + m.longtitude + '.');
     console.log('Moving in ' + m.speedOverGround + '/km speed.')
 ```
 ## Versioning
