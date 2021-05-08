@@ -4,7 +4,8 @@ const { InvalidMessageError, UnsupportedMessageTypeError } = require('../../dist
 const { HOLAMessage,
 	BATTMessage,
 	GNSSMessage,
-	TEHUMessage } = require('../../dist/parsing/messaging');
+	TEHUMessage,
+	CNBSMessage } = require('../../dist/parsing/messaging');
 
 describe('message-parser', () => {
 	test('should parse HOLA messages correctly.', () => {
@@ -70,6 +71,23 @@ describe('message-parser', () => {
 		expect(m.connectionId).toBe('WMXQFV');
 		expect(m.temperature).toBe(22.20);
 		expect(m.humidity).toBe(43.80);
+	});
+
+	test('should parse CNBS messages correctly.', () => {
+		const rawMessage = '$|11|CNBS|12|90111122223333444|13|WMXQFV|411|1|412|extid|413|0x18FE8100|414|8|415|0x00;0x7E;0x00;0x00;0x00;0x00;0x00;0x00|$';
+
+		const pr = parse(rawMessage);
+		expect(pr.messageType).toBe(MessageTypes.CNBS);
+
+		const m = new CNBSMessage(pr);
+		expect(m.messageType).toBe(MessageTypes.CNBS);
+		expect(m.deviceIdentity).toBe('90111122223333444');
+		expect(m.connectionId).toBe('WMXQFV');
+		expect(m.canDeviceNumber).toBe(1);
+		expect(m.idType).toBe('extid');
+		expect(m.rxid).toBe('0x18FE8100');
+		expect(m.dataLength).toBe(8);
+		expect(m.data).toBe('0x00;0x7E;0x00;0x00;0x00;0x00;0x00;0x00');
 	});
 
 	test('should throw exception if the message is invalid', () => {
