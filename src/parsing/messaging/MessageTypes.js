@@ -52,4 +52,13 @@ export class MessageTypes {
     static get TEHU() {
         return "TEHU";
     }
+
+    /**
+     * Gets CNBS message type key.
+     * CANBUS messages.
+     * @returns {string} CNBS message type key.
+     */
+     static get CNBS() {
+        return "CNBS";
+    }
 }
