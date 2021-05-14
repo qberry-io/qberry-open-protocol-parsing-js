@@ -61,4 +61,13 @@ export class MessageTypes {
      static get CNBS() {
         return "CNBS";
     }
+
+    /**
+     * Gets CSQU message type key.
+     * Cell Signal Quality (Level).
+     * @returns {string} CSQU message type key.
+     */
+     static get CSQU() {
+        return "CSQU";
+    }
 }
