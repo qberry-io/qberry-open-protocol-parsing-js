@@ -1,4 +1,4 @@
-# Qberry Open Protocol Parser JS v.1.1.0-beta1
+# Qberry Open Protocol Parser JS v.1.2.0-beta1
 
 "Qberry Open Protocol Parser JS (qberry-open-protocol-parsing-js)" is the official javascript library for parsing messages built with ["Qberry Open Protocol"](https://github.com/denizkanmaz/qberry-open-protocol).
 

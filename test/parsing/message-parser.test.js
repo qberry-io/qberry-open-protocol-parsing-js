@@ -6,6 +6,7 @@ const { HOLAMessage,
 	GNSSMessage,
 	TEHUMessage,
 	CNBSMessage } = require('../../dist/parsing/messaging');
+const { CSQUMessage } = require('../../src/parsing/messaging');
 
 describe('message-parser', () => {
 	test('should parse HOLA messages correctly.', () => {
@@ -88,6 +89,20 @@ describe('message-parser', () => {
 		expect(m.rxid).toBe('0x18FE8100');
 		expect(m.dataLength).toBe(8);
 		expect(m.data).toBe('0x00;0x7E;0x00;0x00;0x00;0x00;0x00;0x00');
+	});
+	
+	test('should parse CSQU messages correctly.', () => {
+		const rawMessage = '$|11|CSQU|12|90111122223333444|13|WMXQFV|611|25|612|0|$';
+
+		const pr = parse(rawMessage);
+		expect(pr.messageType).toBe(MessageTypes.CSQU);
+
+		const m = new CSQUMessage(pr);
+		expect(m.messageType).toBe(MessageTypes.CSQU);
+		expect(m.deviceIdentity).toBe('90111122223333444');
+		expect(m.connectionId).toBe('WMXQFV');
+		expect(m.RSSI).toBe(25);
+		expect(m.BER).toBe(0);
 	});
 
 	test('should throw exception if the message is invalid', () => {
